@@ -9,16 +9,17 @@
 A local observability companion for OpenRig-managed agent fleets.
 Observe sampled activity, retain metadata, and replay what was received.
 
-[![Version 0.4.0](https://img.shields.io/badge/version-0.4.0-c5f36b?style=flat-square&labelColor=111c26)](pyproject.toml)
+[![PyPI](https://img.shields.io/pypi/v/sentinel-openrig?style=flat-square&labelColor=111c26&color=c5f36b)](https://pypi.org/project/sentinel-openrig/)
+[![GitHub release](https://img.shields.io/github/v/release/OOOffsite/sentinel?include_prereleases&style=flat-square&labelColor=111c26&color=65d9ed)](https://github.com/OOOffsite/sentinel/releases/tag/v0.4.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-65d9ed?style=flat-square&labelColor=111c26&logo=python&logoColor=white)](pyproject.toml)
 [![Contract 1.1.0](https://img.shields.io/badge/contract-1.1.0-65d9ed?style=flat-square&labelColor=111c26)](docs/reference/contracts.md)
-[![Local prototype](https://img.shields.io/badge/status-local_prototype-ecc77b?style=flat-square&labelColor=111c26)](docs/STATUS.md)
+[![Alpha](https://img.shields.io/badge/status-alpha-ecc77b?style=flat-square&labelColor=111c26)](docs/STATUS.md)
 [![Zero third-party Python runtime dependencies](https://img.shields.io/badge/Python_runtime_deps-0-c5f36b?style=flat-square&labelColor=111c26)](pyproject.toml)
 
 [![CI](https://github.com/OOOffsite/sentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/OOOffsite/sentinel/actions/workflows/ci.yml)
 [![License Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-65d9ed?style=flat-square&labelColor=111c26)](LICENSE)
 
-[Get started](docs/guides/getting-started.md) · [Documentation](docs/index.md) · [Wiki](docs/wiki/index.md) · [API reference](docs/reference/api.md) · [Status](docs/STATUS.md)
+[Website & live preview](https://oooffsite.github.io/sentinel/) · [Get started](docs/guides/getting-started.md) · [Documentation](docs/index.md) · [Wiki](docs/wiki/index.md) · [API reference](docs/reference/api.md) · [Status](docs/STATUS.md)
 
 </div>
 
@@ -94,7 +95,7 @@ Read the [observation model](docs/wiki/observation-model.md) and [security bound
 | [Wiki and FAQ](docs/wiki/index.md) | [Schemas, types, and specifications](docs/reference/contracts.md) |
 | [GitHub Pages publishing](docs/guides/github-pages.md) | [Integration decision / ADR-S01](docs/INTEGRATION.md) |
 
-The marketing site and documentation share one static GitHub Pages build. The wiki lives in this repository so the same content is reviewable on GitHub and readable on the site. See [site source](site/index.html) and the [publishing guide](docs/guides/github-pages.md). The repository target is [OOOffsite/sentinel](https://github.com/OOOffsite/sentinel); Pages deployment is tracked separately.
+The marketing site and documentation share one static GitHub Pages build. The wiki lives in this repository so the same content is reviewable on GitHub and readable on the site. See [site source](site/index.html) and the [publishing guide](docs/guides/github-pages.md). Explore the [published site and interactive application preview](https://oooffsite.github.io/sentinel/). Release artifacts are available on [GitHub](https://github.com/OOOffsite/sentinel/releases/tag/v0.4.0) and [PyPI](https://pypi.org/project/sentinel-openrig/0.4.0/).
 
 ## Development
 

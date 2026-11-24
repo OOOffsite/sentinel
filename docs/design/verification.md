@@ -40,4 +40,4 @@ The homepage now reuses the original simulation canvas and observed SVG renderer
 
 ## Limits
 
-These are scoped layout and interaction checks, not a full screen-reader, browser-matrix, accessibility-conformance, or performance audit. No GitHub Pages deployment, registry upload, live OpenRig connection, exact exporter interoperability, sustained capacity, or Unified Live Harness adoption is established. No live agent or global harness configuration was changed.
+These are scoped layout and interaction checks, not a full screen-reader, browser-matrix, accessibility-conformance, or performance audit. GitHub/PyPI publication and Pages deployment are recorded separately in the [release guide](../guides/releasing.md#040-publication-record). No live OpenRig connection, exact exporter interoperability, sustained capacity, or Unified Live Harness adoption is established. No live agent or global harness configuration was changed.

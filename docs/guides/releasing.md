@@ -2,6 +2,26 @@
 
 This guide covers releases from **OOOffsite/sentinel** to GitHub and the **sentinel-openrig** Python distribution on PyPI. A successful local build does not by itself publish an artifact or establish registry name ownership.
 
+## 0.4.0 publication record
+
+Published on **2026-11-24**, in order: GitHub tag/release, then PyPI. The annotated `v0.4.0` tag points to commit `9b9222c6b34b39aa1379697951979208e55b774a`.
+
+- [GitHub alpha release and assets](https://github.com/OOOffsite/sentinel/releases/tag/v0.4.0)
+- [PyPI 0.4.0](https://pypi.org/project/sentinel-openrig/0.4.0/)
+- [Release-commit CI](https://github.com/OOOffsite/sentinel/actions/runs/45475204323): passed on Linux Python 3.11–3.14.
+- [Initial Pages deployment](https://github.com/OOOffsite/sentinel/actions/runs/45475301353): succeeded.
+
+Both registries report the same SHA-256 digests as the checked local artifacts:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `sentinel_openrig-0.4.0-py3-none-any.whl` | `0c64acf14a3e8ed4b1e974bce5dfd80c519c3f0506da90029b3fcbc394fbb8c2` |
+| `sentinel_openrig-0.4.0.tar.gz` | `1f9075a8228fb8d1b257cd47200f44c36f79d5cbadc9ef0012dc32f8f0a602fe` |
+
+A fresh, disposable environment installed `sentinel-openrig==0.4.0` directly from PyPI with no dependencies. `pip check`, both installed CLI help commands, package version, and bundled dashboard resources passed. Local clean-wheel testing also passed the six fixtures on Python 3.11–3.14.
+
+This first publication used a securely injected publishing token. No TestPyPI upload was performed and no PyPI Trusted Publisher configuration is claimed. The tagged artifacts remain immutable; subsequent documentation updates on `main` record publication without replacing those artifacts.
+
 ## Current release decisions
 
 | Item | Decision |
@@ -11,7 +31,7 @@ This guide covers releases from **OOOffsite/sentinel** to GitHub and the **senti
 | Version | `0.4.0` |
 | License | Apache-2.0, selected by the maintainer |
 | GitHub repository | `https://github.com/OOOffsite/sentinel` |
-| Planned GitHub Pages URL | `https://oooffsite.github.io/sentinel/` — deployment is a separate step |
+| GitHub Pages | [Published site](https://oooffsite.github.io/sentinel/) |
 | Observation contract | `1.1.0` |
 | Preserved simulation contract | `1.0.0` |
 

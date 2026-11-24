@@ -2,6 +2,10 @@
 
 Last reviewed: **2026-11-24**. Package **0.4.0** is an alpha package. This page describes implementation readiness; GitHub release and PyPI records are the authority for publication status.
 
+## Publication
+
+[GitHub v0.4.0](https://github.com/OOOffsite/sentinel/releases/tag/v0.4.0), [PyPI 0.4.0](https://pypi.org/project/sentinel-openrig/0.4.0/), and the [documentation site](https://oooffsite.github.io/sentinel/) are published. Registry hashes match, and a clean installation from PyPI passed. See the [publication record](guides/releasing.md#040-publication-record) for commit, artifacts, and validation evidence.
+
 ## Compatibility baseline
 
 | Surface | Version / status |

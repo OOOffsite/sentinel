@@ -2,7 +2,7 @@
 
 The repository contains a static marketing site and a Markdown knowledge base. One build publishes guides, wiki, API documentation, specifications, and brand guidelines together.
 
-Target repository: [OOOffsite/sentinel](https://github.com/OOOffsite/sentinel). Planned Pages address: `https://oooffsite.github.io/sentinel/`. This guide does not claim deployment has occurred.
+Repository: [OOOffsite/sentinel](https://github.com/OOOffsite/sentinel). Published site: [oooffsite.github.io/sentinel](https://oooffsite.github.io/sentinel/). The initial [Pages deployment](https://github.com/OOOffsite/sentinel/actions/runs/45475301353) succeeded on 2026-11-24.
 
 ## Build locally
 
@@ -40,7 +40,7 @@ The Pages workflow is manual-only. CI builds and checks documentation without pu
 
 ## README badges
 
-Static badges describe version, Python support, contract, and local-prototype status. CI badges should reference the actual target workflow; a badge may have no run until the repository is pushed. Do not replace unknown CI status with a hardcoded passing badge. Package-index and release badges should be added only after the relevant publication exists.
+README badges link to the published PyPI package, GitHub alpha release, and actual CI workflow. Static badges describe Python support, contract, alpha status, runtime dependency count, and license. Keep workflow status dynamic and add new registry/deployment badges only after their targets exist.
 
 ## Wiki maintenance
 
