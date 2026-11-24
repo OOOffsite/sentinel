@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sentinel is a local observability companion for OpenRig-managed Codex and Claude Code fleets. Observe metadata, retain evidence, and replay the journal.">
+  <meta name="theme-color" content="#080e13">
+  <meta property="og:title" content="Sentinel — See the signal. Keep the truth.">
+  <meta property="og:description" content="Local observability for OpenRig fleets. A clear view of what is observed, what is stale, and what remains unknown.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://oooffsite.github.io/sentinel/assets/brand/social-preview.png">
+  <meta property="og:image:alt" content="SENTINEL — monitor the situation. Local visibility and explicit evidence.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Sentinel — Local observability for OpenRig</title>
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/product-preview.css">
+  <script src="assets/site.js" defer></script>
+  <script src="assets/product-preview-data.js" defer></script>
+  <script src="assets/product-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Sentinel home"><img src="assets/brand/lockup-dark.svg" width="224" height="47" alt="SENTINEL — monitor the situation"></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#product-preview">The interface</a><a href="#knowledge">Knowledge base</a><a href="https://github.com/OOOffsite/sentinel">GitHub</a></nav>
+    <a class="header-cta" href="docs/guides/getting-started.html">Read the docs</a>
+    <details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="#product-preview">The interface</a><a href="#knowledge">Knowledge base</a><a href="docs/STATUS.html">Project status</a><a href="docs/index.html">Documentation</a></nav></details>
+  </header>
+
+  <main id="main">
+    <section class="hero hero-product wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">THE OPENRIG OBSERVABILITY COMPANION</p>
+        <h1 id="hero-title">See the signal.<br><span>Keep the truth.</span></h1>
+      </div>
+      <div class="hero-intro">
+        <p class="hero-description">A fleet-wide view.<br>A closer look at every agent.</p>
+        <p class="hero-detail">Explore Sentinel’s constellation, inspect individual seats, and move through recorded moments. OpenRig runs the fleet. Sentinel makes its observations visible.</p>
+        <div class="hero-actions"><a class="button primary" href="docs/guides/getting-started.html">Get started</a><a class="button secondary" href="#product-preview">Explore the interface</a></div>
+        <div class="hero-meta"><span>v0.4.0</span><span>Python 3.11+</span><span>Local companion</span></div>
+      </div>
+    </section>
+
+    <div class="product-stage wrap">
+      <!-- PRODUCT_PREVIEW -->
+      <div class="product-context"><p>The interface, up close. Select a team, inspect a seat, or scrub between recorded moments.</p><a href="docs/wiki/observation-model.html">How the two views differ</a></div>
+    </div>
+
+    <div class="fact-strip wrap" aria-label="Technical foundations"><div><strong>0</strong><span>Third-party Python<br>runtime dependencies</span></div><div><strong>OTLP</strong><span>Allowlisted HTTP JSON<br>logs + metrics</span></div><div><strong>SQLite</strong><span>Your local<br>metadata journal</span></div><div><strong>1.1.0</strong><span>Observation<br>contract</span></div></div>
+
+    <section class="section wrap" id="how-it-works" aria-labelledby="architecture-title">
+      <div class="section-heading"><p class="eyebrow">A CLEAR CHAIN OF EVIDENCE</p><h2 id="architecture-title">One companion.<br>A clearer picture.</h2><p>OpenRig runs the fleet. Its upstream exporter carries the signals. Sentinel gives those observations a local home.</p></div>
+      <div class="pipeline" aria-label="Telemetry architecture">
+        <div class="pipeline-node"><span class="node-icon" aria-hidden="true">⌘</span><h3>OpenRig</h3><p>Agent and queue authority</p></div><span class="pipeline-connector" aria-hidden="true"></span>
+        <div class="pipeline-node"><span class="node-icon" aria-hidden="true">≋</span><h3>Upstream exporter</h3><p>Pinned, separate dependency</p></div><span class="pipeline-connector" aria-hidden="true"></span>
+        <div class="pipeline-node sentinel-node"><span class="node-icon" aria-hidden="true">◈</span><h3>Sentinel</h3><p>Local journal + read API</p></div>
+      </div>
+      <div class="capability-list">
+        <article><span class="capability-label">OBSERVE</span><h3>Metadata with meaning.</h3><p>Inspect sampled presence and activity, queue transitions, and freshness. Verified identity bindings connect observed nodes to declared seats.</p></article>
+        <article><span class="capability-label">RETAIN</span><h3>Evidence stays local.</h3><p>Allowlisted observations enter a SQLite journal. Prompts, message bodies, and raw exporter batches stay out of stored records.</p></article>
+        <article><span class="capability-label">REPLAY</span><h3>Revisit what was received.</h3><p>Read bounded history and snapshots at a journal cursor. Receipt order is explicit; source causality and historical completeness remain separate questions.</p></article>
+      </div>
+    </section>
+
+    <section class="evidence-section" aria-labelledby="evidence-title"><div class="wrap evidence-grid">
+      <div class="evidence-copy"><p class="eyebrow">HONEST BY DESIGN</p><h2 id="evidence-title">Unknown is<br><em>information.</em></h2><p>A quiet source is not proof of a healthy fleet. An old sample is not a current observation. Sentinel keeps the distinction visible.</p><a class="text-link" href="docs/wiki/observation-model.html">Understand the observation model</a></div>
+      <div class="state-explorer">
+        <div class="explorer-heading"><span class="mono">EVIDENCE EXPLORER</span><span class="sample-tag">ILLUSTRATIVE EXAMPLES</span></div>
+        <div class="state-buttons" role="group" aria-label="Choose an illustrative observation state"><button type="button" aria-pressed="true" data-state="observed">Observed</button><button type="button" aria-pressed="false" data-state="stale">Stale</button><button type="button" aria-pressed="false" data-state="unmapped">Unmapped</button></div>
+        <div class="state-content" data-current-state="observed" aria-live="polite" aria-atomic="true"><div class="state-reading"><span class="reading-symbol" aria-hidden="true"></span><span id="state-value">Sampled working</span></div><p id="state-explanation">A fresh, supported sample can show working activity for a verified seat. It does not establish whether the agent is coding, testing, or reviewing.</p><dl class="state-fields"><div><dt>Identity</dt><dd id="state-identity">Verified binding</dd></div><div><dt>Freshness</dt><dd id="state-freshness">Within configured TTL</dd></div><div><dt>Communication</dt><dd>Unavailable</dd></div></dl></div>
+        <p class="explorer-footnote">Static examples only. This website never connects to your fleet.</p>
+      </div>
+    </div></section>
+
+    <section class="section wrap boundaries" aria-labelledby="boundaries-title"><div><p class="eyebrow">A DELIBERATE BOUNDARY</p><h2 id="boundaries-title">Visibility.<br>Without taking the controls.</h2></div><div class="boundary-details"><p>Sentinel observes through an existing telemetry boundary. OpenRig keeps authority over agents, queues, and execution.</p><ul><li><span aria-hidden="true">+</span> Loopback-only receiver and dashboard</li><li><span aria-hidden="true">+</span> No automatic agent launches or global hooks</li><li><span aria-hidden="true">+</span> Explicit identity mapping; unknown stays unknown</li><li><span aria-hidden="true">+</span> Simulation kept separate from observations</li></ul><a class="text-link" href="docs/INTEGRATION.html">Read the integration decision</a></div></section>
+
+    <section class="section wrap knowledge" id="knowledge" aria-labelledby="knowledge-title"><div class="knowledge-heading"><div><p class="eyebrow">THE SENTINEL KNOWLEDGE BASE</p><h2 id="knowledge-title">Go from curious<br>to informed.</h2></div><p>Start with the essentials. Explore the architecture. Keep the exact contract close at hand.</p></div><div class="knowledge-grid">
+      <a class="knowledge-card guide-card" href="docs/guides/getting-started.html"><span class="card-kicker">GUIDES</span><h3>Your first<br>local view.</h3><p>Prerequisites, setup, and a careful path to verified telemetry.</p><span class="card-link">Read the getting started guide</span></a>
+      <a class="knowledge-card" href="docs/wiki/index.html"><span class="card-kicker">WIKI</span><h3>Understand<br>the system.</h3><p>Architecture, identity, freshness, and the meaning of an observation.</p><span class="card-link">Explore the wiki</span></a>
+      <a class="knowledge-card" href="docs/reference/contracts.html"><span class="card-kicker">REFERENCE &amp; SPECS</span><h3>Work from<br>the contract.</h3><p>CLI commands, API routes, JSON Schemas, and TypeScript declarations.</p><span class="card-link">Browse the specifications</span></a>
+    </div><div class="knowledge-secondary"><a href="docs/guides/operations.html">Operations guide</a><a href="docs/reference/api.html">API reference</a><a href="docs/CONTRIBUTING.html">Contributing</a><a href="docs/SECURITY.html">Security boundaries</a><a href="docs/brand/style-guide.html">Brand &amp; style guide</a></div></section>
+
+    <section class="closing wrap" aria-labelledby="closing-title"><div><p class="eyebrow">BUILT FOR A CLOSER LOOK</p><h2 id="closing-title">Make every<br><span>observation count.</span></h2></div><div><a class="button primary" href="docs/guides/getting-started.html">Start with the guide</a><p>Local companion · v0.4.0<br><a href="docs/STATUS.html">Review readiness and limitations</a></p></div></section>
+  </main>
+
+  <footer class="site-footer wrap"><a class="wordmark" href="index.html" aria-label="Sentinel home"><img src="assets/brand/lockup-dark.svg" width="224" height="47" alt="SENTINEL — monitor the situation"></a><p>Local observability for OpenRig.<br>Evidence first. Unknowns included.</p><nav aria-label="Footer navigation"><a href="docs/index.html">Documentation</a><a href="docs/STATUS.html">Status</a><a href="https://github.com/OOOffsite/sentinel">GitHub</a><a href="references/LICENSE">Apache-2.0</a></nav><span class="footer-note">Static documentation · no fleet connection</span></footer>
+</body>
+</html>

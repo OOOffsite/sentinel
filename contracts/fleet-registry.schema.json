@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "team": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,62}$"
+      },
+      "seat": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,62}$"
+      },
+      "runtime": {
+        "enum": [
+          "codex",
+          "claude-code",
+          "omp",
+          "pi",
+          "stub",
+          "terminal"
+        ]
+      },
+      "cell": {
+        "type": "string",
+        "minLength": 1
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1
+      },
+      "role": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "team",
+      "seat",
+      "runtime",
+      "cell",
+      "scope",
+      "role"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 1,
+  "maxItems": 128
+}

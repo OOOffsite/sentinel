@@ -1,0 +1,25 @@
+# Public source distribution: exclude workstation instructions and runtime state.
+include pyproject.toml README.md README.pypi.md CHANGELOG.md LICENSE
+include module.json __init__.py
+include requirements-dev.txt requirements-docs.txt requirements-release.txt
+recursive-include tools *.py
+recursive-include tests *.py
+recursive-include contracts *.json *.ts
+recursive-include web *.html
+include plugin/plugin.json
+include plugin/.claude-plugin/plugin.json
+include plugin/.codex-plugin/plugin.json
+recursive-include plugin/skills *.md
+recursive-include docs *.md *.json
+recursive-include examples *.json
+recursive-include site *.html *.css *.js *.svg *.png *.webp *.ico
+global-exclude AGENTS.md CLAUDE.md validation.txt .DS_Store *.py[cod] *.sqlite* *.db checkpoint.json
+prune .git
+prune .agents
+prune .claude-flow
+prune .uharness
+prune .venv
+prune runtime
+prune build
+prune dist
+prune _site

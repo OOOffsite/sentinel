@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,62}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,62}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lead": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,62}$"
+          },
+          "pilot_seats": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,62}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "lead",
+          "pilot_seats"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 16
+    },
+    "roster": {
+      "type": "string",
+      "minLength": 1
+    },
+    "missions": {
+      "type": "string",
+      "minLength": 1
+    },
+    "briefs": {
+      "type": "string",
+      "minLength": 1
+    },
+    "guidance": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context_dirs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_repositories": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,62}$"
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "kind": {
+                "const": "git"
+              }
+            },
+            "required": [
+              "id",
+              "url",
+              "kind"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,62}$"
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "snapshot"
+              }
+            },
+            "required": [
+              "id",
+              "path",
+              "kind"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "max_seats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "initial_seats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "permission_policy": {
+          "const": "builtin:standard"
+        },
+        "approval_required": {
+          "const": true
+        },
+        "live_execution_allowed": {
+          "const": false
+        },
+        "require_clean_repo": {
+          "const": true
+        }
+      },
+      "required": [
+        "max_seats",
+        "initial_seats",
+        "permission_policy",
+        "approval_required",
+        "live_execution_allowed",
+        "require_clean_repo"
+      ],
+      "additionalProperties": false
+    },
+    "sentinel": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "const": true
+        },
+        "ttl_seconds": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 600
+        },
+        "default_port": {
+          "type": "integer",
+          "minimum": 1024,
+          "maximum": 65535
+        },
+        "exporter_commit": {
+          "const": "1beecce96befec880a93f60b11d83b44d7347620"
+        },
+        "start": {
+          "enum": [
+            "latest",
+            "retained"
+          ]
+        },
+        "poll_ms": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 60000
+        },
+        "seat_poll_ms": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 600000
+        },
+        "pseudonymize_seats": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "ttl_seconds",
+        "default_port",
+        "exporter_commit",
+        "start",
+        "poll_ms",
+        "seat_poll_ms",
+        "pseudonymize_seats"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "summary",
+    "teams",
+    "roster",
+    "missions",
+    "briefs",
+    "guidance",
+    "context_dirs",
+    "source_repositories",
+    "policy",
+    "sentinel"
+  ],
+  "additionalProperties": false
+}

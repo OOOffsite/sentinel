@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "module": {
+      "const": "sentinel-openrig"
+    },
+    "version": {
+      "const": "0.4.0"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,62}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cursor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_received_ns": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "history_completeness": {
+      "const": "unknown"
+    },
+    "bindings": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scope": {
+      "const": "local_metadata_only"
+    }
+  },
+  "required": [
+    "module",
+    "version",
+    "project_id",
+    "title",
+    "namespace",
+    "record_count",
+    "cursor",
+    "last_received_ns",
+    "history_completeness",
+    "bindings",
+    "scope"
+  ]
+}

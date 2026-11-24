@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+    },
+    "seat": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,62}\\.[a-z][a-z0-9-]{0,62}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "team": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,62}$"
+    },
+    "runtime": {
+      "anyOf": [
+        {
+          "enum": [
+            "claude-code",
+            "codex",
+            "omp",
+            "pi",
+            "stub",
+            "terminal"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "presence": {
+      "enum": [
+        "detached",
+        "exited",
+        "running",
+        "stopped",
+        "unknown"
+      ]
+    },
+    "activity": {
+      "enum": [
+        "idle",
+        "needs-input",
+        "unknown",
+        "working"
+      ]
+    },
+    "needs_input": {
+      "enum": [
+        "no",
+        "unknown",
+        "yes"
+      ]
+    },
+    "sample_ns": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,19})$"
+    }
+  },
+  "required": [
+    "node_id",
+    "seat",
+    "team",
+    "runtime",
+    "presence",
+    "activity",
+    "needs_input",
+    "sample_ns"
+  ]
+}

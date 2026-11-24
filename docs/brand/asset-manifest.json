@@ -1,0 +1,182 @@
+{
+  "schema": "sentinel.brand/1",
+  "version": "1.0.0",
+  "date": "2026-11-24",
+  "name": "SENTINEL",
+  "concept": "Open aperture",
+  "palette": {
+    "ink": "#080e13",
+    "surface": "#0e181f",
+    "text": "#f0f5f4",
+    "muted": "#a5b7bf",
+    "dim": "#8096a2",
+    "lime": "#beff63",
+    "cyan": "#70dced",
+    "graphic_cyan": "#59d7e9"
+  },
+  "geometry": {
+    "viewBox": "0 0 64 64",
+    "center": [
+      32,
+      32
+    ],
+    "outer_radius": 26,
+    "inner_radius": 18,
+    "arc_degrees": [
+      [
+        -154,
+        -26
+      ],
+      [
+        26,
+        154
+      ]
+    ],
+    "core": "diamond, 18 units tip to tip",
+    "clear_space": 16
+  },
+  "license": "Apache-2.0; see repository LICENSE; no trademark grant or registration claimed",
+  "assets": {
+    "app-icon.png": {
+      "bytes": 18142,
+      "sha256": "62b496772d83b95f885c4a1f33ac3d110d3b70d05bfad856e708ee621918279f"
+    },
+    "app-icon.svg": {
+      "bytes": 637,
+      "sha256": "08aa972a916c7cab704e09b1ad1bb0edbae022373b9b485d3f53347a4ed8bdd0",
+      "viewBox": "0 0 512 512"
+    },
+    "apple-touch-icon.png": {
+      "bytes": 4689,
+      "sha256": "93051bd935cd784b29c9543d5bc0c816286d125eda4347b34ae8f8988fbf1002"
+    },
+    "favicon-32.png": {
+      "bytes": 901,
+      "sha256": "6442d8f789228bbf0cbaff2676cec26e82615fcee4330b332a36b27713b9ae2a"
+    },
+    "favicon.svg": {
+      "bytes": 558,
+      "sha256": "e481e8099db2fa82b2a3512d5f03512a66598a15d567c167403351e9b5c7b410",
+      "viewBox": "0 0 64 64"
+    },
+    "lockup-dark.svg": {
+      "bytes": 1381,
+      "sha256": "94065a4c156903dec8ff61679ffdeb10551bc1d8b1f0f7811522e0539136800d",
+      "viewBox": "0 0 506 106"
+    },
+    "lockup-light.svg": {
+      "bytes": 1381,
+      "sha256": "0291585b9de5f70ee5ea2ccbc8dd5531eff1fffc62cbee6f35a00db61c117a13",
+      "viewBox": "0 0 506 106"
+    },
+    "mark-dark.svg": {
+      "bytes": 574,
+      "sha256": "81b6b923b5122ce0b39a6ace51ccd699415fc5eeeccec3a639f938c99a9c7323",
+      "viewBox": "0 0 64 64"
+    },
+    "mark-light.svg": {
+      "bytes": 574,
+      "sha256": "980ab146fe94a7d84aa8b7968ea00c8ce6a20dd7cf26cac8fb85210873ede59a",
+      "viewBox": "0 0 64 64"
+    },
+    "mark-mono.svg": {
+      "bytes": 574,
+      "sha256": "980ab146fe94a7d84aa8b7968ea00c8ce6a20dd7cf26cac8fb85210873ede59a",
+      "viewBox": "0 0 64 64"
+    },
+    "mark-white.svg": {
+      "bytes": 574,
+      "sha256": "be22fcc30da9a64b54d6e92b4060ea74a7d9d322b36f20afbe65c60b00c660b4",
+      "viewBox": "0 0 64 64"
+    },
+    "preview.html": {
+      "bytes": 5874,
+      "sha256": "61be2f44f446cc4eeecf0934330134eb0d4445c503b29b7893a687a1ff809c94"
+    },
+    "readme-banner.png": {
+      "bytes": 77723,
+      "sha256": "36743546333db2fe59c6f159b76b9b818d62db1de3ea71efee73f83d145dd4c8"
+    },
+    "readme-banner.svg": {
+      "bytes": 3253,
+      "sha256": "183b494f6edd3c6abaf73239aa70af0cd381c5fd5e5958ca33620eed544feed1",
+      "viewBox": "0 0 1280 420"
+    },
+    "social-preview.png": {
+      "bytes": 138831,
+      "sha256": "d57c145688eefb02cd29d77bf6ea7d9235afdb91f62927d3ab3a7eab57d5d9da"
+    },
+    "social-preview.svg": {
+      "bytes": 3792,
+      "sha256": "7707268665acc9d117a7389ffd3f18336a7b455e3cb83fbbc089ab57d352d079",
+      "viewBox": "0 0 1200 630"
+    },
+    "wordmark-dark.svg": {
+      "bytes": 1202,
+      "sha256": "8aa39947e4032ec824664c90fca58317e5de6c95b786ad94a816ea9b43648acb",
+      "viewBox": "0 0 506 72"
+    },
+    "wordmark-light.svg": {
+      "bytes": 1202,
+      "sha256": "4e6edcdbdd316edfac958892fb39cb6a4ef38ba5543aa25e518f64cdc552514f",
+      "viewBox": "0 0 506 72"
+    }
+  },
+  "verification": {
+    "svg_xml": "12 SVGs parse, each has title and description; no scripts/external references",
+    "raster_render": "Sharp rendered PNGs; README banner, social card and 256px mark visually inspected",
+    "trademark_clearance": "not performed"
+  },
+  "contrast_measurements": {
+    "method": "WCAG relative luminance sRGB, solid foreground/background; rounded to 2 decimals",
+    "pairs": [
+      {
+        "foreground": "Text",
+        "background": "Ink",
+        "ratio": 17.62
+      },
+      {
+        "foreground": "Muted",
+        "background": "Ink",
+        "ratio": 9.35
+      },
+      {
+        "foreground": "Dim",
+        "background": "Ink",
+        "ratio": 6.28
+      },
+      {
+        "foreground": "Lime",
+        "background": "Ink",
+        "ratio": 16.33
+      },
+      {
+        "foreground": "Cyan",
+        "background": "Ink",
+        "ratio": 12.15
+      },
+      {
+        "foreground": "Ink",
+        "background": "Lime",
+        "ratio": 16.33
+      },
+      {
+        "foreground": "Ink",
+        "background": "Paper",
+        "ratio": 19.4
+      },
+      {
+        "foreground": "Lime",
+        "background": "Paper",
+        "ratio": 1.19
+      },
+      {
+        "foreground": "Cyan",
+        "background": "Paper",
+        "ratio": 1.6
+      }
+    ]
+  },
+  "tagline": "monitor the situation",
+  "wordmark": "Original outlined geometric letterforms; no embedded font"
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "const": "sentinel-openrig"
+    },
+    "version": {
+      "const": "0.4.0"
+    },
+    "contract_version": {
+      "const": "1.1.0"
+    },
+    "kind": {
+      "const": "openrig-observability-companion"
+    },
+    "runtime": {
+      "const": "python3.11+"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project": {
+          "const": "smota/openrig-telemetry"
+        },
+        "transport": {
+          "const": "otlp-http-json"
+        },
+        "signals": {
+          "const": [
+            "logs",
+            "metrics"
+          ]
+        },
+        "scope_version": {
+          "const": "1"
+        }
+      },
+      "required": [
+        "project",
+        "transport",
+        "signals",
+        "scope_version"
+      ]
+    },
+    "entrypoint": {
+      "const": "tools/sentinel.py"
+    },
+    "api": {
+      "const": "contracts/openapi.json"
+    },
+    "skill": {
+      "const": "plugin/skills/sentinel-monitor"
+    },
+    "authority": {
+      "const": "read-only"
+    },
+    "local_only": {
+      "const": true
+    }
+  },
+  "required": [
+    "name",
+    "version",
+    "contract_version",
+    "kind",
+    "runtime",
+    "source",
+    "entrypoint",
+    "api",
+    "skill",
+    "authority",
+    "local_only"
+  ]
+}

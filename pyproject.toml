@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel-openrig"
+version = "0.4.0"
+description = "Local project-independent OpenRig observability and bootstrap companion"
+readme = {file = "README.pypi.md", content-type = "text/markdown"}
+requires-python = ">=3.11"
+dependencies = []
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+keywords = ["openrig", "observability", "telemetry", "agents", "otlp"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: System :: Monitoring",
+]
+
+[project.urls]
+Homepage = "https://github.com/OOOffsite/sentinel"
+Repository = "https://github.com/OOOffsite/sentinel"
+Documentation = "https://github.com/OOOffsite/sentinel/tree/main/docs"
+Issues = "https://github.com/OOOffsite/sentinel/issues"
+Changelog = "https://github.com/OOOffsite/sentinel/blob/main/CHANGELOG.md"
+
+[project.scripts]
+sentinel-openrig = "atlas_sentinel.tools.sentinel:main"
+sentinel-project = "atlas_sentinel.tools.bootstrap:main"
+
+[tool.setuptools]
+packages = ["atlas_sentinel", "atlas_sentinel.tools"]
+package-dir = {atlas_sentinel = "."}
+include-package-data = false
+
+[tool.setuptools.package-data]
+atlas_sentinel = [
+  "module.json", "contracts/*.json", "contracts/*.ts", "web/*.html",
+  "plugin/plugin.json", "plugin/.claude-plugin/*.json", "plugin/.codex-plugin/*.json",
+  "plugin/skills/*/*.md", "docs/*.md", "docs/guides/*.md", "docs/wiki/*.md",
+  "docs/reference/*.md", "docs/research/*.md", "docs/design/*.md", "docs/brand/*.md",
+  "examples/*.json", "README.pypi.md", "CHANGELOG.md",
+]

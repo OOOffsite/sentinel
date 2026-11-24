@@ -1,0 +1,511 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas telemetry event v1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "time",
+    "datacontenttype",
+    "atlasrun",
+    "atlasseq",
+    "atlasorigin",
+    "atlasoffset",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "type": {
+      "enum": [
+        "atlas.agent.state.v1",
+        "atlas.agent.heartbeat.v1",
+        "atlas.message.sent.v1",
+        "atlas.message.delivered.v1",
+        "atlas.task.transition.v1",
+        "atlas.review.completed.v1",
+        "atlas.build.completed.v1",
+        "atlas.incident.opened.v1",
+        "atlas.incident.resolved.v1",
+        "atlas.integration.merged.v1",
+        "atlas.coverage.gap.v1"
+      ]
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "const": "application/json"
+    },
+    "atlasrun": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "atlasseq": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "atlasorigin": {
+      "enum": [
+        "simulated",
+        "observed",
+        "derived"
+      ]
+    },
+    "atlasoffset": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.agent.state.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "state"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "state": {
+                "enum": [
+                  "idle",
+                  "planning",
+                  "coding",
+                  "review",
+                  "testing",
+                  "syncing",
+                  "blocked",
+                  "offline",
+                  "unknown"
+                ]
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.agent.heartbeat.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.message.sent.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "target",
+              "channel",
+              "message_id"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "channel": {
+                "enum": [
+                  "handoff",
+                  "contract",
+                  "review",
+                  "coordination",
+                  "incident"
+                ]
+              },
+              "message_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.message.delivered.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "target",
+              "message_id"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "message_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.task.transition.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "mission",
+              "state"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              },
+              "state": {
+                "enum": [
+                  "queued",
+                  "running",
+                  "review",
+                  "blocked",
+                  "accepted",
+                  "rejected"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.review.completed.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "target",
+              "mission",
+              "result"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              },
+              "result": {
+                "enum": [
+                  "pass",
+                  "fail"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.build.completed.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "mission",
+              "result",
+              "duration_ms"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              },
+              "result": {
+                "enum": [
+                  "pass",
+                  "fail"
+                ]
+              },
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.incident.opened.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "incident_id",
+              "severity",
+              "category"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "incident_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "severity": {
+                "enum": [
+                  "info",
+                  "warning",
+                  "critical"
+                ]
+              },
+              "category": {
+                "enum": [
+                  "dependency",
+                  "merge",
+                  "test",
+                  "security",
+                  "transport"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.incident.resolved.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "incident_id"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "incident_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.integration.merged.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "agent",
+              "mission"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string",
+                "pattern": "^(foundation|intelligence|markets|assurance)\\.[a-z0-9-]+$"
+              },
+              "mission": {
+                "type": "string",
+                "pattern": "^M[0-9]{2}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "atlas.coverage.gap.v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reason"
+            ],
+            "properties": {
+              "reason": {
+                "enum": [
+                  "restart",
+                  "retention",
+                  "sequence_gap",
+                  "source_unavailable",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

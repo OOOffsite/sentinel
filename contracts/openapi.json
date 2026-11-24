@@ -1,0 +1,244 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Sentinel local observation API",
+    "version": "0.4.0",
+    "description": "Trusted local user only. No agent control methods. OTLP/HTTP JSON subset for the existing exporter."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8766"
+    }
+  ],
+  "paths": {
+    "/api/v1/status": {
+      "get": {
+        "operationId": "status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Observed metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "status.schema.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid cursor/query"
+          },
+          "403": {
+            "description": "Non-local request"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/roster": {
+      "get": {
+        "operationId": "roster",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Observed metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "roster.schema.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid cursor/query"
+          },
+          "403": {
+            "description": "Non-local request"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/snapshot": {
+      "get": {
+        "operationId": "snapshot",
+        "parameters": [
+          {
+            "name": "at",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "snapshot.schema.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid cursor/query"
+          },
+          "403": {
+            "description": "Non-local request"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/history": {
+      "get": {
+        "operationId": "history",
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "history.schema.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid cursor/query"
+          },
+          "403": {
+            "description": "Non-local request"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    },
+    "/v1/logs": {
+      "post": {
+        "operationId": "ingestLogs",
+        "description": "Exporter scope v1; supported fields allowlisted, max 2 MiB. Atomic durable acknowledgement. Not a general OTLP receiver.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "resourceLogs"
+                ],
+                "properties": {
+                  "resourceLogs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Accepted or exact normalized duplicates"
+          },
+          "400": {
+            "description": "Invalid or unsupported batch"
+          },
+          "403": {
+            "description": "Local exporter only"
+          },
+          "413": {
+            "description": "Too large"
+          },
+          "415": {
+            "description": "Unsupported encoding"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    },
+    "/v1/metrics": {
+      "post": {
+        "operationId": "ingestMetrics",
+        "description": "Exporter scope v1; supported fields allowlisted, max 2 MiB. Atomic durable acknowledgement. Not a general OTLP receiver.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "resourceMetrics"
+                ],
+                "properties": {
+                  "resourceMetrics": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Accepted or exact normalized duplicates"
+          },
+          "400": {
+            "description": "Invalid or unsupported batch"
+          },
+          "403": {
+            "description": "Local exporter only"
+          },
+          "413": {
+            "description": "Too large"
+          },
+          "415": {
+            "description": "Unsupported encoding"
+          },
+          "503": {
+            "description": "Journal unavailable"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sentinel-openrig",
+  "version": "0.4.0",
+  "contract_version": "1.1.0",
+  "kind": "openrig-observability-companion",
+  "runtime": "python3.11+",
+  "source": {
+    "project": "smota/openrig-telemetry",
+    "transport": "otlp-http-json",
+    "signals": [
+      "logs",
+      "metrics"
+    ],
+    "scope_version": "1"
+  },
+  "entrypoint": "tools/sentinel.py",
+  "api": "contracts/openapi.json",
+  "skill": "plugin/skills/sentinel-monitor",
+  "authority": "read-only",
+  "local_only": true
+}

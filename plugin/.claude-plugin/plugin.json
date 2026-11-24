@@ -1,0 +1,5 @@
+{
+  "name": "sentinel-openrig",
+  "version": "0.4.0",
+  "description": "Read-only guidance for the shared OpenRig Sentinel observation module."
+}

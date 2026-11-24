@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "cursor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "high_watermark": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "as_of_ns": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,19})$"
+    },
+    "mode": {
+      "enum": [
+        "observed",
+        "replay"
+      ]
+    },
+    "history_completeness": {
+      "const": "unknown"
+    },
+    "ttl_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "seats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+          },
+          "seat": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,62}\\.[a-z][a-z0-9-]{0,62}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "team": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,62}$"
+          },
+          "runtime": {
+            "anyOf": [
+              {
+                "enum": [
+                  "claude-code",
+                  "codex",
+                  "omp",
+                  "pi",
+                  "stub",
+                  "terminal"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "presence": {
+            "enum": [
+              "detached",
+              "exited",
+              "running",
+              "stopped",
+              "unknown"
+            ]
+          },
+          "activity": {
+            "enum": [
+              "idle",
+              "needs-input",
+              "unknown",
+              "working"
+            ]
+          },
+          "needs_input": {
+            "enum": [
+              "no",
+              "unknown",
+              "yes"
+            ]
+          },
+          "sample_ns": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,19})$"
+          }
+        },
+        "required": [
+          "node_id",
+          "seat",
+          "team",
+          "runtime",
+          "presence",
+          "activity",
+          "needs_input",
+          "sample_ns"
+        ]
+      }
+    },
+    "recent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "seq": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "kind": {
+            "enum": [
+              "log",
+              "metric"
+            ]
+          },
+          "namespace": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+          },
+          "instance": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+          },
+          "observed_ns": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,19})$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "node_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+              },
+              "runtime": {
+                "enum": [
+                  "claude-code",
+                  "codex",
+                  "omp",
+                  "pi",
+                  "stub",
+                  "terminal"
+                ]
+              },
+              "label": {
+                "type": "string"
+              },
+              "departure_state": {
+                "enum": [
+                  "blocked",
+                  "canceled",
+                  "denied",
+                  "done",
+                  "failed",
+                  "handed-off",
+                  "in-progress",
+                  "pending"
+                ]
+              },
+              "closure_reason": {
+                "enum": [
+                  "blocked_on",
+                  "canceled",
+                  "denied",
+                  "escalation",
+                  "handed_off_to",
+                  "no-follow-on",
+                  "superseded"
+                ]
+              },
+              "start_ns": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "boot_epoch": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+              },
+              "transition_id": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "coverage": {
+                "enum": [
+                  "partial",
+                  "retained_window",
+                  "unavailable"
+                ]
+              },
+              "prior_generation": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+              },
+              "new_generation": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9._:-]{1,256}$"
+              },
+              "continuity": {
+                "const": "intermediate_changes_unknown"
+              },
+              "occurred_ns": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "gap_id": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "gap_from": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "gap_through": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "identity_provenance": {
+                "enum": [
+                  "claimed:v1",
+                  "origin-unknown:v1",
+                  "principal:v1",
+                  "relay:v1",
+                  "transport:v1"
+                ]
+              }
+            },
+            "required": []
+          }
+        },
+        "required": [
+          "seq",
+          "kind",
+          "namespace",
+          "instance",
+          "observed_ns",
+          "name",
+          "value",
+          "data"
+        ]
+      }
+    },
+    "communication_available": {
+      "const": false
+    }
+  },
+  "required": [
+    "cursor",
+    "high_watermark",
+    "as_of_ns",
+    "mode",
+    "history_completeness",
+    "ttl_seconds",
+    "seats",
+    "recent",
+    "communication_available"
+  ]
+}

@@ -1,0 +1,5 @@
+# Build-time tools only; Sentinel's installed CLI has zero runtime dependencies.
+build>=1.2.2,<2
+setuptools>=77,<83
+wheel>=0.45,<1
+twine>=6,<7

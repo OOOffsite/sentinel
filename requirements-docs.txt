@@ -1,0 +1,3 @@
+# Build-time only; no Sentinel or browser runtime dependencies.
+markdown-it-py==4.2.0
+mdurl==0.1.2

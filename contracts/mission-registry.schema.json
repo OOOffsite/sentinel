@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,64}$"
+      },
+      "owner": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,62}\\.[a-z][a-z0-9-]{0,62}$"
+      },
+      "reviewer": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,62}\\.[a-z][a-z0-9-]{0,62}$"
+      },
+      "depends_on": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "acceptance": {
+        "type": "string",
+        "minLength": 1
+      },
+      "write_paths": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "status": {
+        "const": "proposed"
+      }
+    },
+    "required": [
+      "id",
+      "owner",
+      "reviewer",
+      "depends_on",
+      "title",
+      "acceptance",
+      "write_paths",
+      "status"
+    ],
+    "additionalProperties": false
+  }
+}

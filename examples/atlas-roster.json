@@ -1,0 +1,1026 @@
+[
+  {
+    "team": "foundation",
+    "seat": "lead",
+    "runtime": "codex",
+    "cell": "lead",
+    "scope": "docs",
+    "role": "Lead: own dependency graph, scoped dispatch, review routing, handoff and escalation; no direct main writes."
+  },
+  {
+    "team": "foundation",
+    "seat": "schema-lead",
+    "runtime": "codex",
+    "cell": "contracts",
+    "scope": "crates/contracts",
+    "role": "Schema lead: Produce stable typed contracts, versioned fixtures and compatibility tests; no downstream implementation edits. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "instrument-id",
+    "runtime": "claude-code",
+    "cell": "contracts",
+    "scope": "crates/contracts",
+    "role": "Instrument id: Produce stable typed contracts, versioned fixtures and compatibility tests; no downstream implementation edits. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "event-envelope",
+    "runtime": "codex",
+    "cell": "contracts",
+    "scope": "crates/contracts",
+    "role": "Event envelope: Produce stable typed contracts, versioned fixtures and compatibility tests; no downstream implementation edits. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "schema-compat",
+    "runtime": "claude-code",
+    "cell": "contracts",
+    "scope": "crates/contracts",
+    "role": "Schema compat: Produce stable typed contracts, versioned fixtures and compatibility tests; no downstream implementation edits. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "contract-fixtures",
+    "runtime": "codex",
+    "cell": "contracts",
+    "scope": "crates/contracts",
+    "role": "Contract fixtures: Produce stable typed contracts, versioned fixtures and compatibility tests; no downstream implementation edits. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "rust-core",
+    "runtime": "codex",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Rust core: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "state-machine",
+    "runtime": "claude-code",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "State machine: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "async-io",
+    "runtime": "codex",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Async io: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "clock",
+    "runtime": "claude-code",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Clock: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "queue-backpressure",
+    "runtime": "codex",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Queue backpressure: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "memory-layout",
+    "runtime": "claude-code",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Memory layout: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "ffi-boundary",
+    "runtime": "codex",
+    "cell": "runtime",
+    "scope": "crates/runtime",
+    "role": "Ffi boundary: Implement deterministic bounded native processing and explicit I/O boundaries; measure allocations and tails. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "journal",
+    "runtime": "codex",
+    "cell": "transport",
+    "scope": "crates/transport",
+    "role": "Journal: Record ordered envelopes and replay; compare native communication candidates using the identical workload. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "replay",
+    "runtime": "claude-code",
+    "cell": "transport",
+    "scope": "crates/transport",
+    "role": "Replay: Record ordered envelopes and replay; compare native communication candidates using the identical workload. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "ipc-bench",
+    "runtime": "codex",
+    "cell": "transport",
+    "scope": "crates/transport",
+    "role": "Ipc bench: Record ordered envelopes and replay; compare native communication candidates using the identical workload. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "aeron-eval",
+    "runtime": "claude-code",
+    "cell": "transport",
+    "scope": "crates/transport",
+    "role": "Aeron eval: Record ordered envelopes and replay; compare native communication candidates using the identical workload. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "eventhub-bridge",
+    "runtime": "codex",
+    "cell": "transport",
+    "scope": "crates/transport",
+    "role": "Eventhub bridge: Record ordered envelopes and replay; compare native communication candidates using the identical workload. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "postgres",
+    "runtime": "codex",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Postgres: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "parquet",
+    "runtime": "claude-code",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Parquet: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "datafusion",
+    "runtime": "codex",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Datafusion: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "partitioning",
+    "runtime": "claude-code",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Partitioning: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "storage-recovery",
+    "runtime": "codex",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Storage recovery: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "perf-profiler",
+    "runtime": "claude-code",
+    "cell": "storage",
+    "scope": "crates/storage",
+    "role": "Perf profiler: Implement data persistence and analytical interfaces; verify crash recovery and point-in-time queries. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "rest",
+    "runtime": "codex",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Rest: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "openapi",
+    "runtime": "claude-code",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Openapi: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "websocket",
+    "runtime": "codex",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Websocket: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "webhook",
+    "runtime": "claude-code",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Webhook: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "ics",
+    "runtime": "codex",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Ics: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "python-sdk",
+    "runtime": "claude-code",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Python sdk: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "swift-contracts",
+    "runtime": "codex",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Swift contracts: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "foundation",
+    "seat": "migration",
+    "runtime": "claude-code",
+    "cell": "interop",
+    "scope": "services/api",
+    "role": "Migration: Implement consumer-facing interfaces and generated bindings against approved contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "lead",
+    "runtime": "claude-code",
+    "cell": "lead",
+    "scope": "docs",
+    "role": "Lead: own dependency graph, scoped dispatch, review routing, handoff and escalation; no direct main writes."
+  },
+  {
+    "team": "intelligence",
+    "seat": "taxonomy-migrate",
+    "runtime": "codex",
+    "cell": "ontology",
+    "scope": "crates/taxonomy",
+    "role": "Taxonomy migrate: Preserve baseline IDs and parent relationships, version changes and validate classification mappings. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "taxonomy-review",
+    "runtime": "claude-code",
+    "cell": "ontology",
+    "scope": "crates/taxonomy",
+    "role": "Taxonomy review: Preserve baseline IDs and parent relationships, version changes and validate classification mappings. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "entity-resolution",
+    "runtime": "codex",
+    "cell": "ontology",
+    "scope": "crates/taxonomy",
+    "role": "Entity resolution: Preserve baseline IDs and parent relationships, version changes and validate classification mappings. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "event-relations",
+    "runtime": "claude-code",
+    "cell": "ontology",
+    "scope": "crates/taxonomy",
+    "role": "Event relations: Preserve baseline IDs and parent relationships, version changes and validate classification mappings. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "calendar-semantics",
+    "runtime": "codex",
+    "cell": "ontology",
+    "scope": "crates/taxonomy",
+    "role": "Calendar semantics: Preserve baseline IDs and parent relationships, version changes and validate classification mappings. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "bls",
+    "runtime": "codex",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Bls: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "fred",
+    "runtime": "claude-code",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Fred: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "fed",
+    "runtime": "codex",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Fed: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "corporate",
+    "runtime": "claude-code",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Corporate: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "bcb",
+    "runtime": "codex",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Bcb: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "source-registry",
+    "runtime": "claude-code",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Source registry: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "provenance",
+    "runtime": "codex",
+    "cell": "sources",
+    "scope": "crates/sources",
+    "role": "Provenance: Implement read-only source adapter with provenance, fixtures, retry, limits and licensing evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "dataflow-core",
+    "runtime": "codex",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Dataflow core: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "temporal-joins",
+    "runtime": "claude-code",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Temporal joins: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "retractions",
+    "runtime": "codex",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Retractions: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "graph",
+    "runtime": "claude-code",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Graph: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "exposure",
+    "runtime": "codex",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Exposure: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "incremental-bench",
+    "runtime": "claude-code",
+    "cell": "incremental",
+    "scope": "crates/intelligence",
+    "role": "Incremental bench: Implement incremental transformations and compare against full recomputation with retractions. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "event-study",
+    "runtime": "codex",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Event study: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "factor-model",
+    "runtime": "claude-code",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Factor model: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "fx-model",
+    "runtime": "codex",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Fx model: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "portfolio-risk",
+    "runtime": "claude-code",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Portfolio risk: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "forecast-baseline",
+    "runtime": "codex",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Forecast baseline: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "walkforward",
+    "runtime": "claude-code",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Walkforward: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "calibration",
+    "runtime": "codex",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Calibration: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "econometrics-r",
+    "runtime": "claude-code",
+    "cell": "quant",
+    "scope": "research",
+    "role": "Econometrics r: Implement reproducible statistical experiments with frozen datasets, temporal splits and baselines. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "llm-extract",
+    "runtime": "codex",
+    "cell": "validation",
+    "scope": "services/enrichment",
+    "role": "Llm extract: Evaluate structured extraction and model evidence, abstention, calibration and leakage; no order effects. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "evidence-check",
+    "runtime": "claude-code",
+    "cell": "validation",
+    "scope": "services/enrichment",
+    "role": "Evidence check: Evaluate structured extraction and model evidence, abstention, calibration and leakage; no order effects. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "model-registry",
+    "runtime": "codex",
+    "cell": "validation",
+    "scope": "services/enrichment",
+    "role": "Model registry: Evaluate structured extraction and model evidence, abstention, calibration and leakage; no order effects. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "leakage-review",
+    "runtime": "claude-code",
+    "cell": "validation",
+    "scope": "services/enrichment",
+    "role": "Leakage review: Evaluate structured extraction and model evidence, abstention, calibration and leakage; no order effects. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "intelligence",
+    "seat": "quant-reproduce",
+    "runtime": "codex",
+    "cell": "validation",
+    "scope": "services/enrichment",
+    "role": "Quant reproduce: Evaluate structured extraction and model evidence, abstention, calibration and leakage; no order effects. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "lead",
+    "runtime": "codex",
+    "cell": "lead",
+    "scope": "docs",
+    "role": "Lead: own dependency graph, scoped dispatch, review routing, handoff and escalation; no direct main writes."
+  },
+  {
+    "team": "markets",
+    "seat": "nautilus-pin",
+    "runtime": "codex",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Nautilus pin: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "engine-bridge",
+    "runtime": "claude-code",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Engine bridge: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "engine-config",
+    "runtime": "codex",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Engine config: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "market-state",
+    "runtime": "claude-code",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Market state: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "order-lifecycle",
+    "runtime": "codex",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Order lifecycle: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "risk-gate",
+    "runtime": "claude-code",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Risk gate: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "engine-parity",
+    "runtime": "codex",
+    "cell": "engine",
+    "scope": "crates/markets",
+    "role": "Engine parity: Integrate pinned Nautilus interfaces without bypassing safety checks; compare to existing FBGM. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "binance",
+    "runtime": "codex",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Binance: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "kalshi",
+    "runtime": "claude-code",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Kalshi: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "polymarket",
+    "runtime": "codex",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Polymarket: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "market-identity",
+    "runtime": "claude-code",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Market identity: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "settlement-rules",
+    "runtime": "codex",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Settlement rules: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "feed-recovery",
+    "runtime": "claude-code",
+    "cell": "adapters",
+    "scope": "crates/venue-adapters",
+    "role": "Feed recovery: Validate read-only data, normalized instruments, settlement and feed recovery; use fixtures by default. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "historical-ingest",
+    "runtime": "codex",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Historical ingest: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "tick-replay",
+    "runtime": "claude-code",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Tick replay: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "book-replay",
+    "runtime": "codex",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Book replay: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "fill-model",
+    "runtime": "claude-code",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Fill model: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "latency-model",
+    "runtime": "codex",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Latency model: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "fee-model",
+    "runtime": "claude-code",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Fee model: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "replay-validation",
+    "runtime": "codex",
+    "cell": "replay",
+    "scope": "crates/replay",
+    "role": "Replay validation: Validate historical order of arrival and simulation assumptions with deterministic held-out fixtures. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "strategy-contract",
+    "runtime": "codex",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Strategy contract: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "strategy-baseline",
+    "runtime": "claude-code",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Strategy baseline: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "risk-limits",
+    "runtime": "codex",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Risk limits: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "scenario-risk",
+    "runtime": "claude-code",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Scenario risk: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "research-signals",
+    "runtime": "codex",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Research signals: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "promotion-gate",
+    "runtime": "claude-code",
+    "cell": "strategy",
+    "scope": "crates/strategy",
+    "role": "Promotion gate: Research and test strategy and risk contracts in paper mode only; no live promotion. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "ledger-model",
+    "runtime": "codex",
+    "cell": "accounting",
+    "scope": "crates/accounting",
+    "role": "Ledger model: Verify fixed-point ledger, balance invariants, fees, fill idempotency and reconciliation. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "capital-pools",
+    "runtime": "claude-code",
+    "cell": "accounting",
+    "scope": "crates/accounting",
+    "role": "Capital pools: Verify fixed-point ledger, balance invariants, fees, fill idempotency and reconciliation. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "pnl",
+    "runtime": "codex",
+    "cell": "accounting",
+    "scope": "crates/accounting",
+    "role": "Pnl: Verify fixed-point ledger, balance invariants, fees, fill idempotency and reconciliation. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "reconcile",
+    "runtime": "claude-code",
+    "cell": "accounting",
+    "scope": "crates/accounting",
+    "role": "Reconcile: Verify fixed-point ledger, balance invariants, fees, fill idempotency and reconciliation. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "markets",
+    "seat": "tigerbeetle-eval",
+    "runtime": "codex",
+    "cell": "accounting",
+    "scope": "crates/accounting",
+    "role": "Tigerbeetle eval: Verify fixed-point ledger, balance invariants, fees, fill idempotency and reconciliation. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "lead",
+    "runtime": "claude-code",
+    "cell": "lead",
+    "scope": "docs",
+    "role": "Lead: own dependency graph, scoped dispatch, review routing, handoff and escalation; no direct main writes."
+  },
+  {
+    "team": "assurance",
+    "seat": "threat-model",
+    "runtime": "codex",
+    "cell": "security",
+    "scope": "security",
+    "role": "Threat model: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "identity",
+    "runtime": "claude-code",
+    "cell": "security",
+    "scope": "security",
+    "role": "Identity: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "secrets",
+    "runtime": "codex",
+    "cell": "security",
+    "scope": "security",
+    "role": "Secrets: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "dependency-audit",
+    "runtime": "claude-code",
+    "cell": "security",
+    "scope": "security",
+    "role": "Dependency audit: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "sandbox",
+    "runtime": "codex",
+    "cell": "security",
+    "scope": "security",
+    "role": "Sandbox: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "sbom",
+    "runtime": "claude-code",
+    "cell": "security",
+    "scope": "security",
+    "role": "Sbom: Produce threat model, enforce least privilege and independent security evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "unit-oracle",
+    "runtime": "codex",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Unit oracle: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "contract-oracle",
+    "runtime": "claude-code",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Contract oracle: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "integration-oracle",
+    "runtime": "codex",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Integration oracle: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "property-tests",
+    "runtime": "claude-code",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Property tests: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "fault-injection",
+    "runtime": "codex",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Fault injection: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "load-test",
+    "runtime": "claude-code",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Load test: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "adversarial-review",
+    "runtime": "codex",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Adversarial review: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "evidence-audit",
+    "runtime": "claude-code",
+    "cell": "verification",
+    "scope": "tests",
+    "role": "Evidence audit: Author independent oracles and test adversarial behavior; do not modify implementation under review. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "bicep",
+    "runtime": "codex",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Bicep: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "ci",
+    "runtime": "claude-code",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Ci: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "container",
+    "runtime": "codex",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Container: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "observability",
+    "runtime": "claude-code",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Observability: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "sre",
+    "runtime": "codex",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Sre: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "disaster-recovery",
+    "runtime": "claude-code",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Disaster recovery: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "release-gates",
+    "runtime": "codex",
+    "cell": "cloud",
+    "scope": "infra",
+    "role": "Release gates: Implement testable IaC, CI, observability and recovery runbooks; no deployment without approval. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "control-plane",
+    "runtime": "codex",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Control plane: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "dashboard",
+    "runtime": "claude-code",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Dashboard: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "calendar-ui",
+    "runtime": "codex",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Calendar ui: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "swift-ui",
+    "runtime": "claude-code",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Swift ui: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "accessibility",
+    "runtime": "codex",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Accessibility: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "ux-validation",
+    "runtime": "claude-code",
+    "cell": "experience",
+    "scope": "clients",
+    "role": "Ux validation: Implement accessible read-only UI and Swift integration; validate against fixtures and API contracts. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "tech-writer",
+    "runtime": "codex",
+    "cell": "release",
+    "scope": "docs",
+    "role": "Tech writer: Maintain authoritative documentation, decisions, release gates and traceable evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "adr-curator",
+    "runtime": "claude-code",
+    "cell": "release",
+    "scope": "docs",
+    "role": "Adr curator: Maintain authoritative documentation, decisions, release gates and traceable evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "release-notes",
+    "runtime": "codex",
+    "cell": "release",
+    "scope": "docs",
+    "role": "Release notes: Maintain authoritative documentation, decisions, release gates and traceable evidence. Own only task-declared paths; deliver evidence for this specialty."
+  },
+  {
+    "team": "assurance",
+    "seat": "release-manager",
+    "runtime": "claude-code",
+    "cell": "release",
+    "scope": "docs",
+    "role": "Release manager: Maintain authoritative documentation, decisions, release gates and traceable evidence. Own only task-declared paths; deliver evidence for this specialty."
+  }
+]

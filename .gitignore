@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.DS_Store
+
+# Local Sentinel runtime state
+observations.sqlite*
+checkpoint.json
+runtime/
+
+# Generated documentation and release artifacts
+_site/
+build/
+*.egg-info/
+release-dist/
+
+# Local coordination databases and agent configuration
+.agents/
+.claude-flow/
+agentdb.rvf*
+ruvector.db*
+
+# Private workstation guidance and pre-release baseline wheel
+AGENTS.md
+CLAUDE.md
+validation.txt
+dist/

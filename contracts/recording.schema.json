@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas recording v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "id",
+    "label",
+    "seed",
+    "duration_ms",
+    "events"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "telemetry-event.schema.json"
+      },
+      "minItems": 1
+    }
+  }
+}
